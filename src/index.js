@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import axios from "axios";
 
 axios.defaults.headers.common['Authorization'] = 'AUTH TOKEN';
-axios.defaults.baseURL = "https://jsonplaceholder.typicode.com";
+axios.defaults.baseURL = "http://68.183.37.140:8001";
 ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

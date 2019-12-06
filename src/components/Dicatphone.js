@@ -89,7 +89,11 @@ const Dictaphone = ({
     } else if (command.toLowerCase() === "send") {
       console.log(document.activeElement.id);
       document.getElementById("send").click();
-    } else if (command.toLowerCase() === "class") {
+    } 
+    else if(command.toLowerCase() === "events" || command.toLowerCase() === "event") {
+      history.push("/services/events");
+    }
+    else if (command.toLowerCase() === "class" || command.toLowerCase() === "plus") {
       history.push("/services/class");
     } else {
       return null;

@@ -5,30 +5,51 @@ import Axios from "axios";
 import Item from "./Item";
 class ServiceResult extends Component {
   state = {
-    data: []
+    data: [],
+    cmd: ""
   };
   componentDidMount() {
     let cmd = this.props.history.location.pathname.split("/")[2];
     //console.log(cmd)
     let id = localStorage.getItem("id");
     if (cmd === "class") {
-      Axios.get("/users").then(result => {
-          console.log(result.data)
-          let d = [];
-          result.data.forEach(element => d.push({ch1:element.name,ch2:element.email}));
-          
-        this.setState({ data: d });
+      Axios.get("/amis/2").then(result => {
+        console.log(result.data);
+        let d = [];
+        result.data.forEach(element =>
+          d.push({ ch1: element.name, ch2: element.email })
+        );
+
+        this.setState({ data: d, cmd: cmd });
       });
     }
     if (cmd === "grades") {
-        Axios.get("/todos").then(result => {
-            console.log(result.data)
-            let d = [];
-            result.data.forEach(element => d.push({ch1:element.title,ch2:element.completed}));
-            
-          this.setState({ data: d });
-        });
-      }
+      Axios.get("/api/notes", { headers: { Accept: "application/json" } }).then(
+        result => {
+          console.log(result.data);
+          let d = [];
+          result.data.forEach(element =>
+            d.push({ ch1: element.subject, ch2: element.value + "/20" })
+          );
+
+          this.setState({ data: d, cmd: cmd });
+        }
+      );
+    }
+
+    if (cmd === "events") {
+      Axios.get("/api/events", {
+        headers: { Accept: "application/json" }
+      }).then(result => {
+        console.log(result.data);
+        let d = [];
+        result.data.forEach(element =>
+          d.push({ ch1: element.place, ch2: element.date })
+        );
+
+        this.setState({ data: d, cmd: cmd });
+      });
+    }
   }
 
   render() {
@@ -38,9 +59,14 @@ class ServiceResult extends Component {
     });
 
     return (
-      <div className="flex">
+      <div className="flex h-screen">
         <Services></Services>
-        <div>{items}</div>
+        <div className='text-white pl-10 '>
+          <h4>Your {this.state.cmd}</h4>
+          
+        </div>
+        
+        <div  className='text-white pt-10'>{items}</div>
       </div>
     );
   }

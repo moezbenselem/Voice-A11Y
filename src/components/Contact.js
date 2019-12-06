@@ -19,7 +19,8 @@ export default class Contact extends Component {
             <br></br>
             <h6>say <span className='font-bold'>Delete </span>To delete a single word</h6>
             <br></br>
-            <h6>say <span className='font-bold'>Stop </span>To Clear the input</h6>
+            <h6>say <span className='font-bold'>Stop
+            </span>To Clear the input</h6>
           
         
       

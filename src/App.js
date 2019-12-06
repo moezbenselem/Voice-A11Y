@@ -37,7 +37,7 @@ class App extends Component {
           <Route path="/contact" exact component={Contact} />
           <Route path="/login" exact component={Login} />
           <Route path="/services/class" exact component={ServiceResult} />
-          <Route path="/services/time" exact component={ServiceResult} />
+          <Route path="/services/events" exact component={ServiceResult} />
           <Route path="/services/grades" exact component={ServiceResult} />
         </Switch>
         <Footer></Footer>
