@@ -9,6 +9,7 @@ export default class Navigation extends Component {
       <div className="">
         <nav className="flex items-center flex-wrap bg-gray-900 px-2 fixed z-50 w-screen h-auto">
           <div>
+            
             <p className="text-4xl robotto leading-none pt-4">My-EPI</p>
             <p className="text-xl font-hairline  leading-none pb-4">
             École pluridisciplinaire internationale - Sousse
@@ -43,12 +44,13 @@ export default class Navigation extends Component {
             >
               Login
             </NavLink> */}
-            <div className='flex float-left cursor-pointer' onClick={clickAvatar}>Testing user
+            <div className='flex float-left cursor-pointer' onClick={clickAvatar}>Username
             <img src='../images/avatar.png' className='rounded-full w-12 h-12 m-2'/>
 
             </div>
             
           </div>
+          <img src='../images/epi.gif' />
         </nav>
       </div>
     );
