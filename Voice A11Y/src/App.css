@@ -1,0 +1,16 @@
+.robotto{
+  font-family: 'Roboto';
+}
+
+.active{
+  border-bottom-style: ridge;
+  border-bottom-color: #2b6cb0;
+  border-bottom-width: 2px;
+  color: #2b6cb0;	
+}
+
+input[type="text"], textarea {
+
+  background-color : #d1d1d1; 
+
+}
